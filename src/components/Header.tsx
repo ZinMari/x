@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import { Menu } from "./Menu";
 
 interface Props {
 
@@ -20,11 +21,7 @@ export function Header({}:Props){
                 priority
             />
         </Link>
-        <nav className="flex gap-6 text-white/80">
-            <Link href="/">Home</Link>
-            <Link href="/">Explore</Link>
-            <Link href="/">Profile</Link>
-        </nav>   
+        <Menu/>
     </header>
 )
 }
