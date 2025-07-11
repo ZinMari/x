@@ -9,7 +9,7 @@
     "esModuleInterop": true,
     "module": "esnext",
     "moduleResolution": "bundler",
-    "verbatimModuleSyntax": true,
+    "verbatimModuleSyntax": true, // импорт типов с подписью type
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
