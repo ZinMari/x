@@ -1,12 +1,22 @@
-import { PAGES } from "@/config/pages.config";
-import Link from "next/link";
+'use client'
+import { MENU } from "@/shared/data/menu.data";
+import { usePathname } from "next/navigation";
+
+import { MenuItem } from "./MenuItem";
+import { match } from "path-to-regexp";
 
 export function Menu(){
+    const pathName = usePathname();
+
     return (
-        <nav className="flex gap-6 text-white/80">
-            <Link href={PAGES.HOME}>Home</Link>
-            <Link href={PAGES.EXPLORE}>Explore</Link>
-            <Link href={PAGES.PROFILE_FAKE}>Profile</Link>
+        <nav className="flex gap-6">
+            {MENU.map(menuItem => (
+                <MenuItem 
+                    key={menuItem.name}
+                    menuItem={menuItem}
+                    isActive={!!match(menuItem.href)(pathName)}
+                />
+            ))}
         </nav>
     )
 }
