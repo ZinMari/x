@@ -1,3 +1,15 @@
-export default function Explore(){
-    return <h1>Explore</h1>
+import type { Metadata } from "next"
+import { Explore } from "./Explore"
+import { Suspense } from "react"
+
+export const metadata: Metadata = {
+    title: "Explore"
+}
+
+export default function ExplorePage(){
+    return (
+        <Suspense>
+            <Explore/>
+        </Suspense>
+    )
 }
