@@ -5,8 +5,6 @@ export const metadata: Metadata = {
   title: "Profile",
 };
 
-export async function generateMetadata() {}
-
 export default function ProfilePage() {
   return <Profile />;
 }
