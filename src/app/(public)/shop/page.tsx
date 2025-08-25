@@ -1,9 +1,14 @@
-import type { Metadata } from "next"
+import { API_URL } from "@/constants";
+import { ProductCard, type Product } from "@/components/ProductCard";
 
-export const metadata: Metadata = {
-    title: "Shop"
-}
-
-export default function ShopSSRPage(){
-    return <div>SSR</div>
+export default async function ShopPage() {
+  const response = await fetch(API_URL, { cache: "no-store" });
+  const products = (await response.json()) as Product[];
+  return (
+    <div className="grid grid-cols-2 gap-4">
+      {products.map((product) => (
+        <ProductCard key={product.id} {...product} />
+      ))}
+    </div>
+  );
 }
