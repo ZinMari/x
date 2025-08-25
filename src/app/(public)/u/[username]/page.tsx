@@ -2,9 +2,11 @@ import type { Metadata } from "next";
 import { Profile } from "./Profile";
 
 export const metadata: Metadata = {
-    title: 'Profile'
-}
+  title: "Profile",
+};
 
-export default function ProfilePage(){
-    return <Profile/>
+export async function generateMetadata() {}
+
+export default function ProfilePage() {
+  return <Profile />;
 }

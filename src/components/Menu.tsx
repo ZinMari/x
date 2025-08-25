@@ -9,9 +9,6 @@ export function Menu(){
     const pathName = usePathname();
     const segment = useSelectedLayoutSegment();
 
-    console.log(pathName);
-    console.log(segment);
-
     return (
         <nav className="flex gap-6">
             {MENU.map(menuItem => (

@@ -8,7 +8,6 @@ export interface Product {
 }
 
 export function ProductCard({title, image, price}:Product){
-    console.log(image)
     return <div className="w-64 border border-black/10 dark:border-white/10 rounded-xl p-4 hover:shadow transition">
         <Image
             width={100}
