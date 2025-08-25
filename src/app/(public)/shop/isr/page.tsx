@@ -1,3 +1,14 @@
-export default function ShopISRPage(){
-    return <div>ISR</div>
+import { API_URL } from "@/constants";
+import { ProductCard, type Product } from "@/components/ProductCard";
+
+export default async function ShopISRPage() {
+  const response = await fetch(API_URL, { next: { revalidate: 300 } });
+  const products = (await response.json()) as Product[];
+  return (
+    <div className="grid grid-cols-2 gap-4">
+      {products.map((product) => (
+        <ProductCard key={product.id} {...product} />
+      ))}
+    </div>
+  );
 }
